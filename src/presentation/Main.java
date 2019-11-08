@@ -59,5 +59,23 @@ public class Main {
 		annonces.add(new Annonce(1, "annonce 1", "test", 30.0F));
 		annonces.add(new Annonce(2, "annonce 2", "test2", 40.0F));
 		annonces.add(new Annonce(3, "annonce 3", "test3", 50.0F));
+		
+		personne.setAnnonces(annonces);
+		service.creerAnnonce(personne, annonces.get(1));
+		
+		System.out.println("------------------------------------------");
+		System.out.println("Etape 8");
+		System.out.println(service.getAnnonce(personne, 2));
+		
+		service.deleteAnnonce(personne, 2);
+		
+		System.out.println("------------------------------------------");
+		System.out.println("Etape 9");
+		service.updateAnnonce(personne, annonces.get(2), "nouveau intitulé", "nouveau detail", 120.0F);
+		System.out.println(service.getAnnonce(personne, 2));
+		
+		System.out.println("------------------------------------------");
+		System.out.println("Etape 10");
+		System.out.println(service.findAllAnnonce(personne));
 	}
 }
