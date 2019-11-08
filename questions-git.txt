@@ -1,0 +1,138 @@
+﻿QUESTIONS:
+
+1/- C'est quoi Git ?
+Git est un gestionnaire de versions décentralisé
+
+2/- C'est quoi un repository git ?
+Un repository git est un dépot où l'on peut déposer des fichiers
+
+3/- Quelle commande faut t il écrire pour valider un ajout dans un repertoire git ?
+la commande pour valider un ajout est "git add ."
+
+4/- que fait la commande git push ?
+Cette commande envoi les modifications locales apportées à la branche principale associée
+
+5/- quel est l'avantage de git par rapport à svn?
+Git est un outil décentralisé alors SVN est centralisé
+
+6/- c'est quoi la commande git stash ?
+La commande git stash résout les conflits de manière brutale
+
+7/- c'est quoi la commande git branch ?
+git branch permet d'obtenir la liste des branches
+
+8/- c'est quoi la commande git clone ?
+La commande git clone permet de copier un projet sur github dans le repertoire où nous nous trouvons
+
+9/-c'est quoi la commande git config ?
+git config permet de spécifier les paramètres de configuration de git
+
+10/- c'est quoi la commande git init ?
+git init permet d'initialiser un dépôt git dans un repertoire. Elle créer un sous-repertoire nommé .git
+
+11/- c'est quoi un conflit git ?
+Un conflit git est un problème de fusion entre un même fichier qui ne comporte pas les mêmes données. Lors d'un merge, un conflit va alors survenir
+
+12/- comment resoudre un conflit git ?
+Il existe deux manières:
+- Modifier le fichiers qui pose problème à la main
+- Utiliser la commande git stash
+
+13/- c'est quoi la commande git remote ?
+git remote permet de visualiser les serveurs distant que l'on a enregistrer
+
+14/- quelle est la différence entre git remote et git clone ?
+git remote est utilisé pour faire référence à un référentiel distant ou à votre référentiel central alors que git clone est utilisé pour copier ou cloner un référentiel différent
+
+15/- c'est quoi la commande git status ?
+git status permet d'obtenir l'état d'un fichier
+
+16/- c'est quoi la commande git checkout ?
+git checkout permet de switcher d'une branche à l'autre
+
+17/- c'est quoi la commande git log ?
+git log permet d'obtenir l'historique des commit
+
+18/- donner la suite de commandes à écrire pour envoyer un fichier sur un repository distant
+- git init
+- git remote add origin + adresse du serveur distant
+- git pull origin master
+- git add .
+- git commit -m "test"
+- git push origin master
+
+19/- c'est quoi github ?
+github est un outil gratuit pour héberger du code open source
+
+20/- citer 3 avantages d'utiliser git dans un projet
+- permet la modularisation
+- outil collaboratif
+- permet de revenir à une ancienne version stable
+- permet d'éviter les pertes de données
+
+21/- c'est quoi le fichier .gitignore
+.gitignore est un filtre sur certains type de fichiers au moment d'uploader ses fichiers sur github
+
+22/- quelles sont les étapes permettant de lier un projet git local à github?
+- créer le repository sur github
+- créer le fichier .gitignore
+- utiliser la commande git remote add origin + adresse du serveur distant
+
+23/- quel est le role des branches sur git ?
+Le rôle des branche dans git est de pouvoir avancer sur un projet sans impacter sur les autres parties du projet
+
+24/- c'est quoi un conflit git?
+Voir question 11
+
+25/- comment resoudre un conflit sur git ?
+voir question 12
+
+LE BONCOIN:
+
+UML
+---
+ Personne 1-----------* Annonce
+ personneId             idAnnonce 
+ nom                    intitule
+ prenom                 detail
+ login                  prix
+ motDePasse
+ dateNaissance   
+
+ - créer un projet java : Ensup-Master1-tp2-Nom-Prenom
+ - configurer le git/github avec un projet java et rajouter serviceshuios en collaborateur
+ 
+ Metier:
+--------
+ Personne
+ Annonce
+ 
+ Iservice:
+----------
+  //Crud Personne
+ public int creerPersonne(List<Personne> list, Personne personne)
+ public Personne getPersonne(List<Personne> list,int idPersonne)
+ public void deletePersonne(List<Personne> list,int idPersonne)
+ public void updatePersonne(List<Personne> list,Personne p, String nom, String prenom, Date dateNaissance)
+ public List<Personne> findAllPersonnes()
+ public int getPersonneId(List<Personne> list,Personne p)
+ public void affichePersonnes();
+ public void afficheAnnoncesPersonne(Personne p)
+ //Crud Annonce
+ public int creerAnnonce(Personne personne, Annonce a)
+ public Annonce getAnnonce(Personne personne,int idAnnonce)
+ public void deleteAnnonce(Personne personne,int idAnnonce)
+ public void updateAnnonce(Personne personne,Annonce a)
+ public List<Annonce> findAllAnnonce(Personne personne)
+
+ServiceImpl
+-----------
+implementation de l'interface
+utiliser un tableau de Personne pour office de stockage des données
+public static List<Personne> base = new ArrayList<Personne>();
+
+Lanceur
+-------
+Tester chaque méthode
+
+A la fin (17h00) au plus tard pusher son code sur github  
